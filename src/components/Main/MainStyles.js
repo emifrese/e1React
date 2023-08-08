@@ -3,10 +3,13 @@ import { styled } from "styled-components";
 export const MainContainer = styled.main`
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
   width: 100%;
-  height: 80%;
-  background: #fff;
+  gap: 1rem;
+  /* height: 80%; */
+  background: grey;
   border-radius: 0.5rem;
   opacity: 90%;
   color: #000;

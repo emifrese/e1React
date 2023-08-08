@@ -1,19 +1,37 @@
-import { PokemonCardContainer } from "./PokemonCardStyles";
+import {
+  PokemonAttackCost,
+  PokemonAttackDamage,
+  PokemonAttackDescription,
+  PokemonCardContainer,
+  PokemonDescription,
+  PokemonHP,
+  PokemonImg,
+  PokemonName,
+  PokemonNameContainer,
+  PokemonTypeContainer,
+  EmptyDiv
+} from "./PokemonCardStyles";
 
-const PokemonCard = () => {
+const PokemonCard = ({ name, img }) => {
   return (
-    <PokemonCardContainer>
-      <div>
-        <h2>Bulbasaur</h2>
-        <span>#1</span>
-      </div>
-      <img src="" alt="" />
-      <div>
-        <p>Attack</p>
-        <p>Defense</p>
-        <p>HP</p>
-        <button>Fav</button>
-      </div>
+    <PokemonCardContainer name={name}>
+      <PokemonTypeContainer>Basic Pokemon</PokemonTypeContainer>
+      <PokemonNameContainer>
+        <PokemonName>{name}</PokemonName>
+        <PokemonHP>40hp</PokemonHP>
+      </PokemonNameContainer>
+      <PokemonImg>
+        <img src={img} alt="" />
+      </PokemonImg>
+      <EmptyDiv></EmptyDiv>
+      <PokemonDescription>{name} brief descripttion</PokemonDescription>
+      <EmptyDiv></EmptyDiv>
+      <PokemonAttackCost>cost</PokemonAttackCost>
+      <PokemonAttackDescription>Impactrueno</PokemonAttackDescription>
+      <PokemonAttackDamage>40</PokemonAttackDamage>
+      <PokemonAttackCost>cost</PokemonAttackCost>
+      <PokemonAttackDescription>Cola Trueno</PokemonAttackDescription>
+      <PokemonAttackDamage>40</PokemonAttackDamage>
     </PokemonCardContainer>
   );
 };
