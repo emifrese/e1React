@@ -9,7 +9,7 @@ export const PokemonCardsContainer = styled.div`
   justify-content: center;
   justify-items: center;
   background: rgba(255,255,255, 0.5);
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
 
   @media (max-width: 1366px) and (min-width: 768px) {
     grid-template-columns: repeat(auto-fill, 220px);

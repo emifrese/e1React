@@ -5,12 +5,12 @@ export const MainContainer = styled.main`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 20px;
+  /* padding: 20px; */
   width: 100%;
-  gap: 1rem;
+  gap: 2rem;
   /* height: 80%; */
   background: grey;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   opacity: 90%;
   color: #000;
 `;

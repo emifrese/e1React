@@ -1,13 +1,20 @@
 import { createGlobalStyle } from "styled-components";
-import pokeball from '../assets/pokeball.png'
 
 export const GlobalStyles = createGlobalStyle`
     :root {
         // poner colores
+        --light-red: #FF0000;
+        --dark-red: #CC0000;
+        --blue: #3B4CCA;
+        --yellow: #FFDE00;
+        --gold: #B3A125;
+        --font-body: "PT Sans", sans-serif;
+        --font-heading: "Kanit", sans-serif;
     }
 
     * {
         box-sizing: border-box;
+        font-family: var(--font-body);
     }
 
     html {
@@ -17,10 +24,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;
-        background-image: url(${pokeball});
-        background-size: 50px;
-        background-color: #fff;
-        font-family: "proxima-nova",sans-serif; //buscar proxima-nova
+        background: #ffffff;
         color: #fff;
         a {
             text-decoration: none;

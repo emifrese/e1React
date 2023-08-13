@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   padding: 10px;
   width: 100%;
   background: #fff;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   opacity: 90%;
   color: #000;
 `;
@@ -60,3 +60,13 @@ export const NavBarLink = styled.button`
     border: none;
   }
 `;
+
+export const BurgerMenu = styled.div`
+  position: absolute;
+  top: 70px;
+  height: 200px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10;
+  color: #000
+`

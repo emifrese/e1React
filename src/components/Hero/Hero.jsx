@@ -1,5 +1,5 @@
 import { HeroImgContainer, HeroSection, HeroTextDiv } from "./HeroStyles";
-import heroImg from "../../assets/pokemonHero.png";
+import heroImg from "../../assets/PokemonHeroBig-removebg.png";
 
 const Hero = () => {
   return (
@@ -8,12 +8,15 @@ const Hero = () => {
         <img src={heroImg} alt="" />
       </HeroImgContainer>
       <HeroTextDiv>
-        <h2>Selecciona tus 6 favoritos y preparate para la pelea!</h2>
+        <h2>
+          <span>PokeTradeMasters</span>
+          Las mejores cards!
+        </h2>
         <p>
-          Bienvenid@! Aqui comienza tu camino como entrenadr@ Pokemon. Este es
-          tu punto de partida, descubre pokemones y sus habilidades, elige tus 6
-          favoritos (puedes cambiarlos en cualquier momento) y preparate para
-          enfrentarte a otros entrenadores como tú.
+          Bienvenid@! En PokeTradeMasters buscamos brindarte la mejor
+          experiencia a la hora de buscar esa card que venis deseando hace
+          tanto. Te aseguramos total seguridad en el traspaso de cards como
+          también en la compra directa
         </p>
       </HeroTextDiv>
     </HeroSection>

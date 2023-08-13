@@ -6,7 +6,7 @@ export const FooterContainer = styled.div`
   padding: 10px;
   width: 100%;
   background: #fff;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   opacity: 90%;
   color: #000;
 `;
