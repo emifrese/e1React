@@ -1,6 +1,23 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+
+    @keyframes slide {
+        0% {
+            opacity: 0;
+            top: -200px
+        }
+
+        75% {
+            opacity: 0.5;
+        }
+
+        100% {
+            opacity: 1;
+            top: 70px
+        }
+    }
+
     :root {
         // poner colores
         --light-red: #FF0000;

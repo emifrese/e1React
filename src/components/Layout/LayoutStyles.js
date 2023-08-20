@@ -8,5 +8,4 @@ export const LayoutWrapper = styled.div`
     /* padding: 10px 20px; */
     width: 100%;
     height: 100vh;
-    position: relative;
 `

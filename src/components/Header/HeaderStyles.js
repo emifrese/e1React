@@ -7,8 +7,10 @@ export const HeaderContainer = styled.div`
   width: 100%;
   background: #fff;
   /* border-radius: 0.5rem; */
-  opacity: 90%;
+  /* opacity: 90%; */
   color: #000;
+  position: relative;
+  z-index: 10;
 `;
 
 export const HeaderLogo = styled.div`
@@ -46,27 +48,30 @@ export const NavBarLinksContainer = styled.ul`
   margin: 0;
 
   @media (max-width: 767px) {
-    display: none;
+    /* display: none; */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 200px;
+    width: 100vw;
+    position: absolute;
+    left: 0px;
+    top: 70px;
+    background-color: #fff;
+    animation: slide 0.3s ease-in;
   }
 `;
 
-export const NavBarLink = styled.button`
+export const NavBarButton = styled.button`
   cursor: pointer;
   border: none;
-  :hover {
-    border: none;
+
+  &:hover, &:active {
+    color: var(--dark-red)
   }
-  :active {
-    border: none;
+
+
+  @media (max-width: 767px) {
+    padding: 10px;
   }
 `;
-
-export const BurgerMenu = styled.div`
-  position: absolute;
-  top: 70px;
-  height: 200px;
-  width: 100%;
-  background-color: #fff;
-  z-index: 10;
-  color: #000
-`
