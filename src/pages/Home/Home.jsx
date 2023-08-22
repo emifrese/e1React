@@ -1,25 +1,12 @@
 import Hero from "../../components/Hero/Hero";
 import PokemonCards from "../../components/PokemonCards/PokemonCards";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
-import { pokemonTypes } from "../../helpers/iconsTypes";
-import TypeIcon from "../../components/TypeIcon/TypeIcon";
 
 const Home = () => {
-  Object.entries(pokemonTypes).forEach((key, value) => console.log(key, value));
-
   return (
     <>
       <Hero />
-      {Object.entries(pokemonTypes).map((type) => {
-        // console.log(typeof type[0])
-        return (
-          <TypeIcon
-            key={crypto.randomUUID()}
-            typeImg={type[1]}
-            type={type[0]}
-          />
-        );
-      })}
+      
       <PokemonCards>
         <PokemonCard
           name={"Pikachu"}

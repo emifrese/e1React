@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const PokemonCardContainer = styled.div`
-  width: 300px;
+  width: 220px;
   aspect-ratio: 1/1.4;
   display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;

@@ -1,9 +1,10 @@
 import { styled } from "styled-components";
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  align-items: center;
+  padding: 20px 30px;
   width: 100%;
   background: #fff;
   /* border-radius: 0.5rem; */
@@ -25,7 +26,7 @@ export const HeaderLogo = styled.div`
 
 export const NavBar = styled.div`
   display: flex;
-  width: 30%;
+  min-width: 30%;
   justify-content: end;
 `;
 
@@ -44,6 +45,7 @@ export const NavBarLinksContainer = styled.ul`
   list-style: none;
   justify-content: space-between;
   width: 100%;
+  gap: 20px;
   padding: 0;
   margin: 0;
 
@@ -65,6 +67,7 @@ export const NavBarLinksContainer = styled.ul`
 export const NavBarButton = styled.button`
   cursor: pointer;
   border: none;
+  background: transparent;
 
   &:hover, &:active {
     color: var(--dark-red)

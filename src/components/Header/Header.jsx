@@ -10,8 +10,7 @@ import pokeball from "../../assets/pokeball.png";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
-import { Link } from "react-router-dom";
-import bug from '../../assets/type-icons/bug.svg'
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const { menu, menuHandler } = useContext(Context);
@@ -20,8 +19,7 @@ const Header = () => {
     <>
       <HeaderContainer>
         <HeaderLogo>
-          {/* <img src={pokeball} alt="" /> */}
-          <img src={bug} />
+          <NavLink to={'/'}><img src={pokeball} /></NavLink>
         </HeaderLogo>
         <NavBar>
           <BurgerMenuIcon>

@@ -45,7 +45,7 @@ export const HeroTextDiv = styled.div`
   align-items: start;
   justify-content: center;
   height: fit-content;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(var(--background-card));
 
   h2 {
     display: flex;

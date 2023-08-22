@@ -22,9 +22,11 @@ export const GlobalStyles = createGlobalStyle`
         // poner colores
         --light-red: #FF0000;
         --dark-red: #CC0000;
+        --light-blue: #5C6BC0;
         --blue: #3B4CCA;
         --yellow: #FFDE00;
         --gold: #B3A125;
+        --background-card: 255, 255, 255, 0.7;
         --font-body: "PT Sans", sans-serif;
         --font-heading: "Kanit", sans-serif;
     }
@@ -45,11 +47,11 @@ export const GlobalStyles = createGlobalStyle`
         color: #fff;
         a {
             text-decoration: none;
-            color: #fff;
+            /* color: #fff; */
         }
 
         a:visited {
-            color: #fff;
+            /* color: #fff; */
         }
 
         li {
