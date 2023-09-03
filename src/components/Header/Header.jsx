@@ -8,6 +8,7 @@ import {
 } from "./HeaderStyles";
 import pokeball from "../../assets/pokeball.png";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
 import { Link, NavLink } from "react-router-dom";
@@ -39,6 +40,7 @@ const Header = () => {
               <Link to={'aboutus'} onClick={menuHandler}>
                 <NavBarButton>Acerca de Nosotros</NavBarButton>
               </Link>
+              <AiOutlineShoppingCart size={32}></AiOutlineShoppingCart>
             </NavBarLinksContainer>
           )}
         </NavBar>

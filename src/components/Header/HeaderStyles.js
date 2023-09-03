@@ -44,6 +44,7 @@ export const NavBarLinksContainer = styled.ul`
   display: flex;
   list-style: none;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   gap: 20px;
   padding: 0;
