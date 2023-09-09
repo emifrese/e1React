@@ -16,24 +16,13 @@ const Products = () => {
   });
 
   const nextTypes = () => {
-    setTypesConfig((prevState) => {
-      return { ...prevState, currentPage: prevState.currentPage + 1 };
-    });
-    if (
-      typesConfig.amountPerPage * typesConfig.currentPage >=
-      types.length
-    ) {
-      return;
-    }
     const minIndex =
-      (typesConfig.currentPage * typesConfig.amountPerPage) -
+      (typesConfig.currentPage + 1) * typesConfig.amountPerPage -
       typesConfig.amountPerPage;
     const maxIndex =
-      (typesConfig.currentPage * typesConfig.amountPerPage) - 1 <=
-      types.length
-        ? typesConfig.currentPage * typesConfig.amountPerPage - 1
+      (typesConfig.currentPage + 1) * typesConfig.amountPerPage - 1 <= types.length
+        ? (typesConfig.currentPage + 1) * typesConfig.amountPerPage - 1
         : types.length;
-    console.log(typesConfig, types.length);
     const showTypes = types.map((type, i) => {
       return {
         ...type,
@@ -41,8 +30,26 @@ const Products = () => {
       };
     });
     setTypes(showTypes);
-    console.log(showTypes);
+    setTypesConfig((prevState) => {
+      return { ...prevState, currentPage: prevState.currentPage + 1 };
+    });
   };
+
+  const prevTypes = () => {
+    const minIndex = (typesConfig.currentPage - 1) * typesConfig.amountPerPage - typesConfig.amountPerPage;
+    const maxIndex = typesConfig.currentPage * typesConfig.amountPerPage - (typesConfig.amountPerPage + 1);
+    const showTypes = types.map((type, i) => {
+      return {
+        ...type,
+        visible: i >= minIndex && i <= maxIndex
+      }
+    })
+    console.log(showTypes);
+    setTypes(showTypes);
+    setTypesConfig((prevState) => {
+      return {...prevState, currentPage: prevState.currentPage - 1}
+    })
+  }
 
   useEffect(() => {
     const showTypes = types.map((type, i) => {
@@ -53,11 +60,11 @@ const Products = () => {
     });
 
     setTypes(showTypes);
-  }, [window.innerWidth]);
+  }, []);
 
   return (
     <>
-      <button onClick={() => console.log("prev")}>Prev</button>
+      {typesConfig.currentPage > 1 && <button onClick={() => prevTypes()}>Prev</button>}
       {types
         .filter((type) => type.visible)
         .map((type) => (
@@ -67,7 +74,7 @@ const Products = () => {
             type={type.type}
           />
         ))}
-      <button onClick={() => nextTypes()}>Next</button>
+      {(typesConfig.amountPerPage * typesConfig.currentPage < types.length) && <button onClick={() => nextTypes()}>Next</button>}
       <div>Products</div>
       <PokemonCards>
         <PokemonCard
