@@ -99,15 +99,15 @@ export const PokemonDescription = styled.div`
 `;
 
 export const PokemonAttackDescription = styled.div`
-  grid-column-start: 2;
-  grid-column-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 7;
   font-size: 16px;
   font-weight: 600;
   padding: 5px;
-  border-bottom: 1px solid black;
-  border-top: 1px solid #aaa;
+  border: 1px solid black;
   text-align: center;
   display: flex;
+  justify-content: center;
 
   @media (max-width: 1366px) and (min-width: 768px) {
     font-size: 13px
@@ -118,23 +118,3 @@ export const PokemonAttackDescription = styled.div`
   }
 `;
 
-export const PokemonAttackCost = styled.div`
-  font-size: 18px;
-  text-align: center;
-  padding: 3px;
-  border-bottom: 1px solid black;
-  border-left: 1px solid #aaa;
-  border-top: 1px solid #aaa;
-  display: flex;
-`;
-
-export const PokemonAttackDamage = styled.div`
-  font-weight: 400;
-  font-size: 20px;
-  text-align: center;
-  padding: 5px;
-  border-bottom: 1px solid black;
-  border-top: 1px solid #aaa;
-  border-right: 1px solid #aaa;
-  display: flex;
-`;

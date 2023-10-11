@@ -1,6 +1,4 @@
 import {
-  PokemonAttackCost,
-  PokemonAttackDamage,
   PokemonAttackDescription,
   PokemonCardContainer,
   PokemonDescription,
@@ -12,26 +10,22 @@ import {
   EmptyDiv
 } from "./PokemonCardStyles";
 
-const PokemonCard = ({ name, img }) => {
+const PokemonCard = ({ name, img, move1, move2, ability, hp, types }) => {
   return (
     <PokemonCardContainer name={name}>
-      <PokemonTypeContainer>Basic Pokemon</PokemonTypeContainer>
+      <PokemonTypeContainer>{types?.map(type => `${type.type.name.toUpperCase()} `)}</PokemonTypeContainer>
       <PokemonNameContainer>
-        <PokemonName>{name}</PokemonName>
-        <PokemonHP>40hp</PokemonHP>
+        <PokemonName>{name.toUpperCase()}</PokemonName>
+        <PokemonHP>{hp}</PokemonHP>
       </PokemonNameContainer>
       <PokemonImg>
         <img src={img} alt="" />
       </PokemonImg>
       <EmptyDiv></EmptyDiv>
-      <PokemonDescription>{name} brief descripttion</PokemonDescription>
+      <PokemonDescription>{ability.toUpperCase()}</PokemonDescription>
       <EmptyDiv></EmptyDiv>
-      <PokemonAttackCost>cost</PokemonAttackCost>
-      <PokemonAttackDescription>Impactrueno</PokemonAttackDescription>
-      <PokemonAttackDamage>40</PokemonAttackDamage>
-      <PokemonAttackCost>cost</PokemonAttackCost>
-      <PokemonAttackDescription>Cola Trueno</PokemonAttackDescription>
-      <PokemonAttackDamage>40</PokemonAttackDamage>
+      <PokemonAttackDescription>{move1.toUpperCase()}</PokemonAttackDescription>
+      <PokemonAttackDescription>{move2.toUpperCase()}</PokemonAttackDescription>
     </PokemonCardContainer>
   );
 };

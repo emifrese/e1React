@@ -3,8 +3,12 @@ import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import PokemonCards from "../../components/PokemonCards/PokemonCards";
 import TypeIcon from "../../components/TypeIcon/TypeIcon";
 import { pokemonTypes } from "../../helpers/iconsTypes";
+import { useSelector } from "react-redux";
+import PokemonPreview from "../../components/PokemonPreview/PokemonPreview";
 
 const Products = () => {
+  const {pokemonList} = useSelector((state) => state.pokemon);
+  console.log(pokemonList)
   const [types, setTypes] = useState(
     Object.entries(pokemonTypes).map((type) => {
       return { typeImg: type[1], type: type[0], visible: false };
@@ -14,6 +18,7 @@ const Products = () => {
     currentPage: 1,
     amountPerPage: 4,
   });
+  const [pokemonPage, setPokemonPage] = useState(1);
 
   const nextTypes = () => {
     const minIndex =
@@ -77,7 +82,10 @@ const Products = () => {
       {(typesConfig.amountPerPage * typesConfig.currentPage < types.length) && <button onClick={() => nextTypes()}>Next</button>}
       <div>Products</div>
       <PokemonCards>
-        <PokemonCard
+
+        {pokemonList.filter((pokemon, i) => i > pokemonPage * 20 - 20 && i <= pokemonPage * 20).map((pokemon, i) => 
+        <PokemonPreview key={i} name={pokemon.name} img={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${i + (pokemonPage - 1) * 20}.svg`}/>)}
+        {/* <PokemonCard
           name={"Pikachu"}
           img={
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
@@ -100,7 +108,7 @@ const Products = () => {
           img={
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
           }
-        />
+        /> */}
       </PokemonCards>
     </>
   );

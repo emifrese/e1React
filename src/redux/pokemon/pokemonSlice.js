@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
   pokemonList: [],
+  featuredPokemon: [],
   filter: "all",
 };
 
@@ -10,17 +11,20 @@ export const pokemonSlice = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     addPokemonToList: (state, action) => {
-      return { ...state, pokemonList: state.pokemonList.push(action.payload) };
-    }
-  },
-    filterPokemonList: (state, action) => {
-        return {
-            ...state,
-            filter: action.payload
-        }
+      return { ...state, pokemonList: action.payload };
+    },
+      filterPokemonList: (state, action) => {
+          return {
+              ...state,
+              filter: action.payload
+          }
+      },
+      addFeaturedPokemon: (state, action) => {
+        return {...state, featuredPokemon: action.payload}
+      }
     }
 });
 
-export const { addItem, removeItem, cleanCart } = pokemonSlice.actions;
+export const { addPokemonToList, filterPokemonList, addFeaturedPokemon } = pokemonSlice.actions;
 
 export default pokemonSlice.reducer;

@@ -1,37 +1,29 @@
 import Hero from "../../components/Hero/Hero";
 import PokemonCards from "../../components/PokemonCards/PokemonCards";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const {featuredPokemon} = useSelector((state) => state.pokemon);
+  console.log(featuredPokemon)
+
   return (
     <>
       <Hero />
-      
+
       <PokemonCards>
-        <PokemonCard
-          name={"Pikachu"}
-          img={
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
-          }
-        />
-        <PokemonCard
-          name={"Charmander"}
-          img={
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg"
-          }
-        />
-        <PokemonCard
-          name={"Electivire"}
-          img={
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/466.svg"
-          }
-        />
-        <PokemonCard
-          name={"Mewtwo"}
-          img={
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-          }
-        />
+        {featuredPokemon.map((pokemon) => (
+          <PokemonCard
+            key={pokemon.id}
+            name={pokemon.name}
+            img={pokemon.sprites.other.dream_world.front_default || pokemon.sprites.front_default}
+            move1={pokemon.moves[0].move.name}
+            move2={pokemon.moves[1].move.name}
+            ability={pokemon.abilities[0].ability.name}
+            hp={pokemon.stats[0].base_stat}
+            types={pokemon.types}
+          />
+        ))}
       </PokemonCards>
     </>
   );

@@ -56,6 +56,7 @@ export const NavBarLinksContainer = styled.ul`
     justify-content: space-around;
     align-items: center;
     min-height: 200px;
+    padding: 20px 0;
     width: 100vw;
     position: absolute;
     left: 0px;
@@ -70,10 +71,10 @@ export const NavBarButton = styled.button`
   border: none;
   background: transparent;
 
-  &:hover, &:active {
-    color: var(--dark-red)
+  &:hover,
+  &:active {
+    color: var(--dark-red);
   }
-
 
   @media (max-width: 767px) {
     padding: 10px;
