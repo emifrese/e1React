@@ -17,14 +17,13 @@ function App() {
         dispatch(addPokemonToList(results));
         const featuredPokemons = await getRandomFeatured();
         dispatch(addFeaturedPokemon(featuredPokemons));
-        console.log(featuredPokemons)
       };
       getPokemons();
     } catch (error) {
       console.log(error);
     }
 
-  });
+  }, [dispatch]);
 
   return (
     <>

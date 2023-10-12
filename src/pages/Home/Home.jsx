@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   const {featuredPokemon} = useSelector((state) => state.pokemon);
-  console.log(featuredPokemon)
 
   return (
     <>
