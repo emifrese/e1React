@@ -13,7 +13,7 @@ const Home = () => {
       <PokemonCards>
         {featuredPokemon.map((pokemon) => (
           <PokemonCard
-            key={pokemon.id}
+            key={crypto.randomUUID()}
             name={pokemon.name}
             img={pokemon.sprites.other.dream_world.front_default || pokemon.sprites.front_default}
             move1={pokemon.moves[0].move.name}

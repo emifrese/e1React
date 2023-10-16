@@ -40,6 +40,9 @@ export const PokemonAddToCartButton = styled.button`
 `;
 
 export const PokemonRemoveOne = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #ffcb05;
   border: none;
   border-radius: 5px;
@@ -48,7 +51,8 @@ export const PokemonRemoveOne = styled.button`
   font-weight: bold;
   font-size: 1rem;
   color: #000;
-  width: 40%;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   margin-bottom: 10px;
   &:hover {
     background-color: #ffc000;
@@ -56,6 +60,9 @@ export const PokemonRemoveOne = styled.button`
 `;
 
 export const PokemonAddOne = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #ffcb05;
   border: none;
   border-radius: 5px;
@@ -64,7 +71,8 @@ export const PokemonAddOne = styled.button`
   font-weight: bold;
   font-size: 1rem;
   color: #000;
-  width: 40%;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   margin-bottom: 10px;
   &:hover {
     background-color: #ffc000;
@@ -76,4 +84,4 @@ export const PokemonButtonsContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-`
+`;

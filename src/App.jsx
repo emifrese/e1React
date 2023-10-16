@@ -12,9 +12,9 @@ function App() {
   useEffect(() => {
     try {
       const getPokemons = async () => {
-        const response = await getPokemonList();
-        const {results} = response;
-        dispatch(addPokemonToList(results));
+        const pokemons = await getPokemonList();
+        console.log(pokemons);
+        dispatch(addPokemonToList(pokemons));
         const featuredPokemons = await getRandomFeatured();
         dispatch(addFeaturedPokemon(featuredPokemons));
       };

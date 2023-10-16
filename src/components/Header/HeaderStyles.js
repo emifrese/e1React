@@ -66,6 +66,25 @@ export const NavBarLinksContainer = styled.ul`
   }
 `;
 
+export const ListElement = styled.li`
+  position: relative;
+`;
+
+export const CartBubble = styled.span`
+  position: absolute;
+  top: -3px;
+  right: -5px;
+  border-radius: 100%;
+  background: var(--dark-red);
+  height: 16px;
+  width: 16px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+`;
+
 export const NavBarButton = styled.button`
   cursor: pointer;
   border: none;
