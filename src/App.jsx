@@ -13,7 +13,7 @@ function App() {
     try {
       const getPokemons = async () => {
         const pokemons = await getPokemonList();
-        console.log(pokemons);
+        // console.log(pokemons);
         dispatch(addPokemonToList(pokemons));
         const featuredPokemons = await getRandomFeatured();
         dispatch(addFeaturedPokemon(featuredPokemons));

@@ -73,7 +73,7 @@ const Products = () => {
 
     setGenerations(showGenerations);
   }, [generationsConfig.amountPerPage, setGenerationsConfig]);
-  console.log(crypto.randomUUID);
+  // console.log(crypto.randomUUID);
 
   return (
     <>
@@ -86,11 +86,12 @@ const Products = () => {
           <GenerationIcon
             key={crypto.randomUUID()}
             generationNumber={generation.generation}
-            onClick={() =>
+            onClick={() => {
               currentGeneration === generation.generation
                 ? setCurrentGeneration("all")
-                : setCurrentGeneration(generation.generation)
-            }
+                : setCurrentGeneration(generation.generation);
+              setPokemonPage(1);
+            }}
             selected={generation.generation === currentGeneration}
           />
         ))}
@@ -109,14 +110,15 @@ const Products = () => {
           )
           .map((pokemon, i) => {
             const index = cart.findIndex((item) => item.id === pokemon.id);
-            console.log(pokemon);
+            // console.log(pokemon);
             return (
               <PokemonPreview
                 key={crypto.randomUUID()}
-                id={i + 1}
+                id={pokemon.id}
                 name={pokemon.name}
                 img={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
-                  pokemon.id + (pokemonPage - 1) * 20
+                  pokemon.id +
+                  (pokemonPage > 1 ? pokemonPage - 2 : pokemonPage - 1) * 20
                 }.svg`}
                 inCart={index !== -1}
                 quantity={cart[index]?.quantity}

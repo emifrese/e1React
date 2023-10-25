@@ -6,6 +6,7 @@ import {
   PokemonPreviewContainer,
   PokemonPreviewImage,
   PokemonPreviewName,
+  PokemonPreviewPrice,
   PokemonRemoveOne,
 } from "./PokemonPreviewStyles";
 import { addItem, removeItem } from "../../redux/cart/cartSlice";
@@ -17,6 +18,7 @@ const PokemonPreview = ({ name, img, id, inCart, quantity }) => {
     <PokemonPreviewContainer>
       <PokemonPreviewImage src={img} alt={name} />
       <PokemonPreviewName>{name.toUpperCase()}</PokemonPreviewName>
+      <PokemonPreviewPrice>$2000</PokemonPreviewPrice>
       {inCart ? (
         <PokemonButtonsContainer>
           <PokemonRemoveOne

@@ -23,6 +23,11 @@ export const PokemonPreviewName = styled.h3`
   margin: 10px 0;
 `;
 
+export const PokemonPreviewPrice = styled.h3`
+  font-size: 1rem;
+  margin: 0;
+`;  
+
 export const PokemonAddToCartButton = styled.button`
   background-color: #ffcb05;
   border: none;
@@ -53,7 +58,6 @@ export const PokemonRemoveOne = styled.button`
   color: #000;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  margin-bottom: 10px;
   &:hover {
     background-color: #ffc000;
   }
@@ -73,10 +77,13 @@ export const PokemonAddOne = styled.button`
   color: #000;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  margin-bottom: 10px;
   &:hover {
     background-color: #ffc000;
   }
+`;
+
+export const PokemonCartQuantity = styled.span`
+  margin: 0 10px;
 `;
 
 export const PokemonButtonsContainer = styled.div`

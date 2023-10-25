@@ -30,7 +30,7 @@ export const ModalDiv = styled.div`
   text-align: center;
   max-width: inherit;
   border: 1px solid white;
-  width: 60%;
-  height: 50%;
-  top: 30%;
+  width: 40%;
+  height: 70%;
+  top: 15%;
 `;
